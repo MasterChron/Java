@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class QuizzingSystem {
 
-    public static int answer(String str, String correctAns,int score){
+    public static int answer(String str, String correctAns, int score){
         if (str.equalsIgnoreCase(correctAns)) {
             System.out.println("Your answer was correct");
             return score + 1;
