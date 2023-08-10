@@ -24,6 +24,7 @@ public class QuizzingSystem {
             System.out.println("B) " + b);
             System.out.println("C) " + c);
             System.out.println("D) " + d);
+            System.out.println("Please choose one of the options shown above such as\nA, B, C or D.");
             str = scan.nextLine();
             if(str.equalsIgnoreCase("a") || str.equalsIgnoreCase("b") || str.equalsIgnoreCase("c") || str.equalsIgnoreCase("d")){
                 break;
@@ -42,37 +43,20 @@ public class QuizzingSystem {
         return score;
     }
 
-    public static int[] questionRandomizer(){
+    public static int[] questionRandomizer() {
         int[] a = new int[10];
-        for(int i=0; i < a.length; i++){
-            a[i] = (int)(Math.random() * 20);
-            for (int j=0;j<a.length;j++){
-                while(a[i] == a[j]){
-                    if(i == j){
-                        break;
-                    }
-                    a[i] = (int)(Math.random() * 20);
+        a[0] = (int) (Math.random() * 21);
+
+        for (int i = 1; i < a.length; i++) {
+            a[i] = (int) (Math.random() * 20);
+            for (int j = 0; j < i; j++) {
+                if (a[i] == a[j]) {
+                    i--;
+                    break;
                 }
             }
         }
 
-//        a[0] = (int)(Math.random() * 20);
-//        int temp;
-//        for(int i=1; i < a.length; i++){
-//            temp = (int)(Math.random() * 20);
-//            while(a[i - 1] == temp){
-//                temp = (int)(Math.random() * 20);
-//            }
-//            a[i] = temp;
-//        }
-//        Arrays.sort(a);
-//        for(int j=0; j<a.length - 1; j++){
-//            temp = a[j + 1];
-//            while(temp == a[j]){
-//                temp = (int) (Math.random() * 20);
-//                a[j + 1] = temp;
-//            }
-//        }
         return a;
     }
     public static int quiz(int a, int score) {
@@ -86,7 +70,7 @@ public class QuizzingSystem {
         }
         //Question 2
         else if (a == 1) {
-            System.out.println("\nQuestion: Which of these numbers do not follow the pattern");
+            System.out.println("\nQuestion: Which of these numbers do not follow the pattern ---> (1, 2, 3, 4)");
             str = ask("1","2","3","8");
             score = answer(str,"d", score);
         }
