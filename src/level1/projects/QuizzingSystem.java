@@ -39,7 +39,7 @@ public class QuizzingSystem {
         int score = 0;
         for(int i = 0;i < questions.length; i++) {
             int questionsQ = questions[i];
-            score = quiz(questionsQ);
+            score = quiz(questionsQ, score);
         }
         return score;
     }
@@ -63,8 +63,7 @@ public class QuizzingSystem {
 
         return a;
     }
-    public static int quiz(int a) {
-        int score = 0;
+    public static int quiz(int a, int score) {
         String str;
         //Question 1
         if (a == 0) {
@@ -116,7 +115,7 @@ public class QuizzingSystem {
         }
         //Question 9
         else if (a == 8) {
-            System.out.println("When was declaration of independence signed?");
+            System.out.println("When was declaration of independence signed in the United States of America?");
             str = ask("1932","1869","1776","2023");
             score = answer(str,"c", score);
         } else if (a == 9) {
