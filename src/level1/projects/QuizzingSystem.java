@@ -35,32 +35,36 @@ public class QuizzingSystem {
         return str;
     }
 
-    public static int trueQuiz(int[] questions, int score) {
+    public static int trueQuiz(int[] questions) {
+        int score = 0;
         for(int i = 0;i < questions.length; i++) {
             int questionsQ = questions[i];
-            score = quiz(questionsQ, score);
+            score = quiz(questionsQ);
         }
         return score;
     }
 
     public static int[] questionRandomizer() {
+        //initialization of an array here of size '10'
         int[] a = new int[10];
+        //first index randomized here
         a[0] = (int) (Math.random() * 21);
 
         for (int i = 1; i < a.length; i++) {
+            //randomizes value from 2nd index instead of the 1st
             a[i] = (int) (Math.random() * 20);
             for (int j = 0; j < i; j++) {
                 if (a[i] == a[j]) {
-                    i--;
-                    break;
+                    i--;   //decreases i value if they find an identical
+                    break; //breaks out of the for loop to restart it.
                 }
             }
         }
 
         return a;
     }
-    public static int quiz(int a, int score) {
-
+    public static int quiz(int a) {
+        int score = 0;
         String str;
         //Question 1
         if (a == 0) {
@@ -132,7 +136,7 @@ public class QuizzingSystem {
             str = ask("Saturn","Venus","Mars","Jupiter");
             score = answer(str,"c", score);
         } else if (a == 13) {
-            System.out.println("What of these is the score covalent bond for water?");
+            System.out.println("Which one of these is the covalent bond for water?");
             str = ask("O2","H20","CO2","N2");
             score = answer(str,"b", score);
         } else if (a == 14) {
@@ -167,11 +171,11 @@ public class QuizzingSystem {
 
     public static void main(String[] args) {
         int[] questions;
-        int scores = 0;
+        int scores;
         questions = questionRandomizer();
         System.out.println(Arrays.toString(questions));
-        scores = trueQuiz(questions,scores);
-        System.out.println("You scored: " + scores + "/10");
+        scores = trueQuiz(questions);
+        System.out.println("You scored: " + scores + "/10" + " or " + ((scores/10)* 100));
     }
 }
 
