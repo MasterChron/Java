@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class IdenticalArraysElement {
 
-    public int IdenticalElements(int[] a) {
+    public static int IdenticalElements(int[] a) {
         Arrays.sort(a);
         int N = a.length;
 

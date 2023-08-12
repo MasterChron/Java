@@ -56,11 +56,10 @@ public class QuizzingSystem {
             for (int j = 0; j < i; j++) {
                 if (a[i] == a[j]) {
                     i--;   //decreases i value if they find an identical
-                    break; //breaks out of the for loop to restart it.
+                    break; //breaks out of the for loop to give the value to i again. This happens until all the values till (i) are not identical and in turn have different values.
                 }
             }
         }
-
         return a;
     }
     public static int quiz(int a, int score) {
