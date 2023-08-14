@@ -1,15 +1,13 @@
 package level1.projects;
 
-import java.util.Scanner;
-
 public class PasswordSystem {
 
     //Create a java program to generate a password of 8 characters.
     //The password should have following mandatory features -
-    //~ it should contain atleast one uppercase character
-    //~ it should contain atleast one lowercase character
-    //~ it should contain atleast one special character
-    //~ it should contain atleast one numerical character
+    //~ it should contain at least one uppercase character
+    //~ it should contain at least one lowercase character
+    //~ it should contain at least one special character
+    //~ it should contain at least one numerical character
 
 
     public static boolean conditionCheck(String str) {
@@ -68,15 +66,15 @@ public class PasswordSystem {
         for (int i = 0; i < (int) (Math.random() * e.length - 1); i++) {
             str.append(e[(int) (Math.random() * (e.length - 1))]);
         }
-        return str.toString().toString();
+        return str.toString();
     }
 
     public static void passwordCheck() {
         boolean conditions = false;
-        String str = "";
+        String str;
         while (!conditions) {
             str = PasswordCreation();
-            conditions = conditionCheck(str.toString());
+            conditions = conditionCheck(str);
             if (conditions) {
                 break;
             }
