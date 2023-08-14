@@ -11,12 +11,12 @@ public class ReverseTheEntireString {
     public static void reverseString(String str){
         char[] a = str.toCharArray();
         StringBuilder str2 = new StringBuilder();
-        String str3 = "";
+        StringBuilder str3 = new StringBuilder();
         for(int i=a.length - 1; i >= 0; i--){
             str2.append(a[i]);
-            str3 = str3 + a[i];
+            str3.append(a[i]);
         }
-        System.out.println("Reversed String: " + str2.toString());
+        System.out.println("Reversed String: " + str2);
         System.out.println(str3);
     }
 
