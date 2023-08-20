@@ -28,7 +28,8 @@ public class balenceBetweenEqualAndOdd {
             int digit = num % 10;
             if (digit % 2 == 0) {
                 even = true;
-            } else {
+            }
+            else {
                 odd = true;
             }
             num /= 10;
