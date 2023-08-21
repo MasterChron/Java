@@ -17,10 +17,12 @@ public class balenceBetweenEqualAndOdd {
     }
 
     public static boolean check(int num) {
-        if (num < 10) {
+        if (num < 10 && num >= 0) {
             return false;
         }
-
+        if(num < 0){
+            num *= -1;
+        }
         boolean even = false;
         boolean odd = false;
 
@@ -39,6 +41,6 @@ public class balenceBetweenEqualAndOdd {
 
 
     public static void main(String[] args) {
-        System.out.println(number(10,20,2));
+        System.out.println(number(-20,20,2));
     }
 }
