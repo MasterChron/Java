@@ -10,7 +10,6 @@ public class cubeOfAllNumbers {
 
         System.out.println("Hello please enter a number: ");
         int limit = scan.nextInt();
-
         for(int i = 1; i <= limit; i++) {
             System.out.println(Math.pow(i, 3));
         }
@@ -18,6 +17,5 @@ public class cubeOfAllNumbers {
 
     public static void main(String[] args) {
         cubeOfAllNumbers obj = new cubeOfAllNumbers();
-        obj.cube();
     }
 }

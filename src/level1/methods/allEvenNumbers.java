@@ -1,6 +1,7 @@
 package level1.methods;
 
 public class allEvenNumbers {
+    
 
     public boolean check(int a) {
 

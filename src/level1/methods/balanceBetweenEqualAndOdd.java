@@ -43,7 +43,6 @@ public class balanceBetweenEqualAndOdd {
         return evenAndOdd;
     }
 
-
     public static void main(String[] args) {
         System.out.println(number(-20,20,2));
     }

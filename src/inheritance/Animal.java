@@ -1,11 +1,24 @@
-package inheritance;
+class Animal
+{
 
-public class Animal {
-
-    void runOpMode(){
-
+    public void animalSound()
+    {
+        System.out.println("The animal makes a sound");
     }
-    void walk() {
-        System.out.println("walking behaviour");
+}
+
+class Dog extends Animal
+{
+    public void animalSound()
+    {
+        super.animalSound();     System.out.println("The dog says: bow wow");
     }
+}
+
+class MainClass1
+{
+    public static void main(String args[])
+    {
+        Animal myDog = new Dog(); // Create a Dog object
+        myDog.animalSound();   }
 }
