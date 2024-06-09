@@ -13,7 +13,7 @@ public class Notepad extends JFrame {
     JButton save = new JButton("save");
 
 
-    Notepad(){
+    public Notepad(){
         setLayout(new BorderLayout());
         addingActionListeners();
 
